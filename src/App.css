@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+a{
+  text-decoration: none;
+  color: white;
+  
+  display: flex;
+  
+}
+
+@media screen and (max-width:420px){
+  a{
+    font-size: 15px;
+  }
+  .para{
+    font-size: 13px;
+  }
+}

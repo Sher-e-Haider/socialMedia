@@ -1,0 +1,15 @@
+.appbar{
+   
+    width:85vw;
+    margin-top: 5px;
+    border-radius: 10px;
+    /* border:1px solid red; */
+    margin: 10px auto;
+    background-color:rgb(36, 39, 43)
+}
+
+img{
+    border-radius: 50%;
+    width:40px;
+    height:40px;
+}

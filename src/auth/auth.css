@@ -1,0 +1,141 @@
+.main{
+    display: flex;
+   
+    justify-content: center;
+    align-items: center;
+}
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    height:75vh;
+}
+
+.all{
+     display: flex;
+     flex-direction: column;
+    
+  overflow:hidden;
+   align-items: center;
+     justify-content: center;
+     
+   
+}
+
+input{
+   width:400px;
+    padding:9px;
+    margin: 5px 0;
+}
+.input_flex{
+    display: flex;
+    flex-direction: column;
+}
+
+.name{
+    display: flex;
+    flex-direction: column;
+}
+
+.googlebar{
+    
+    width: 420px;
+   
+}
+.signin{
+   
+    width:420px;
+}
+.label{
+    color:rgb(121, 30, 232);
+}
+
+.load{
+    
+    position: relative;
+    top: 140px;
+   
+    padding:2px;
+  text-align: center;
+   color: red;
+   
+
+    
+}
+.whole{
+   
+    overflow:hidden;
+}
+
+@media screen and (max-width:490px){
+    input{
+        width:300px;
+        
+    }
+    .googlebar{
+       
+        width: 320px;
+       
+    }
+    .signin{
+    
+    width:320px;
+}
+    .form{
+        width:480px;
+    }
+    .all{
+        width:480px;
+    }
+}
+
+
+
+@media screen and (max-width:390px){
+    input{
+        width:260px;
+        
+    }
+    .googlebar{
+       
+        width: 282px;
+       
+    }
+    .signin{
+   
+    width:282px;
+}
+    .form{
+        width:300px;
+    }
+    .all{
+        width:300px;
+    }
+}
+
+@media screen and (max-width:320px){
+    input{
+        width:200px;
+        
+    }
+    .googlebar{
+       
+        width: 222px;
+       
+    }
+    .signin{
+   
+    width:222px;
+}
+}
+
+@media screen and (max-width:270px){
+    
+    .form{
+        width:260px;
+    }
+    .all{
+        width:260px;
+    }
+}
