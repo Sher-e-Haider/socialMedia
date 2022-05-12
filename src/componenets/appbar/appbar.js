@@ -25,12 +25,12 @@ import { useState } from 'react';
     const dispatch=useDispatch()
     const location = useLocation();
     const history=useNavigate()
-    useEffect(() => {
-      if(!data){
-        history('/auth',{replace:true})
-      }
+  //   useEffect(() => {
+  //     if(!data){
+  //       history('/auth',{replace:true})
+  //     }
      
-  },[data,history])
+  // },[data,history])
 
 //   useEffect(() => {
 //     if(data){

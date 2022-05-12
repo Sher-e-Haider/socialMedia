@@ -49,7 +49,9 @@ const PostDetails = () => {
 
 <Appbar/>   
    {
-     post&&(
+
+   post &&(
+     
        <Paper style={{ padding: '20px', borderRadius: '15px' }} elevation={6}>
       <div className={classes.card}>
         <div className={classes.section}>
@@ -87,11 +89,10 @@ const PostDetails = () => {
         </div>
       )}
       </div>
-  }
+   }
       
     </Paper>
-     )
-   }
+    ) }
    </div>
     
   );

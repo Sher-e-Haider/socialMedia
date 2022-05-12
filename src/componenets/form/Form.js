@@ -20,7 +20,7 @@ const Form = ({currentId,setCurrentId}) => {
     const dispatch=useDispatch()
     const data = useState(JSON.parse(localStorage.getItem('profile')))
     const posts = useSelector(state=>state.alldata)
-    //console.log(data,'dataaa');
+    console.log(data,'dataaa');
     const history = useNavigate()
     const classes = useStyles();
     const handleSubmit=(e)=>{
@@ -50,7 +50,8 @@ const Form = ({currentId,setCurrentId}) => {
   return (
     <div className='form_displays'>
     <Paper className={classes.paper}>
-           <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
+         {
+           data[0] ?<form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
              <Typography variant="h6">{ currentId? 'Editing':'Creating' } a memory</Typography>
              {/* <TextField name="creator" variant="outlined" label="creator" fullWidth value={postData.creator} onChange={(e)=> setPostData({...postData, creator:e.target.value})}/> */}
              <TextField name="title" variant="outlined" label="title" fullWidth value={postData.title} onChange={(e)=> setPostData({...postData, title:e.target.value})}/>
@@ -63,8 +64,12 @@ const Form = ({currentId,setCurrentId}) => {
              <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" fullWidth>Submit</Button>
              {/* <Button  variant="contained" color="secondary" size="small"  fullWidth>Clear</Button>
             */}
-             </form>
+             </form> :(
+               <strong>Please signIn to create your yaadgar Pall </strong>
+             )
 
+         }
+          
         </Paper>
      
      </div>
