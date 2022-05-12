@@ -12,11 +12,12 @@ import { useState } from 'react';
 const PostDetails = () => {
   const { post, posts } = useSelector((state) => state.alldata);
   const [recommendedPosts,setRecommendedPosts] = useState('')
+  const user = JSON.parse(localStorage.getItem('profile'));
   const dispatch = useDispatch();
   const history = useNavigate()
   const classes = useStyles();
   const { id } = useParams();
-  
+  //console.log(user,'sahilll');
   useEffect(() => {
     dispatch(getPost(id));
     
@@ -32,8 +33,11 @@ const PostDetails = () => {
   const openPost = (_id) => history(`/posts/${_id}`,{replace:true});
 
   useEffect(() => {
-  const re = posts?.filter(({ _id }) => _id !== post._id);
+    if(posts){
+      const re = posts?.filter(({ _id }) => _id !== post._id);
   setRecommendedPosts(re)
+    }
+  
 },[])
  
   
@@ -58,7 +62,7 @@ const PostDetails = () => {
           <Typography variant="h3" component="h2">{post.title}</Typography>
           <Typography gutterBottom variant="h6" color="textSecondary" component="h2">{post.tags.map((tag) => `#${tag} `)}</Typography>
           <Typography gutterBottom variant="body1" component="p">{post.message}</Typography>
-          <Typography variant="h6">Created by: {post.name}</Typography>
+          <Typography variant="h6">Created by: {user.result.name}</Typography>
           <Typography variant="body1">{moment(post.createdAt).fromNow()}</Typography>
           <Divider style={{ margin: '20px 0' }} />
           <Typography variant="body1"><strong>Realtime Chat - coming soon!</strong></Typography>

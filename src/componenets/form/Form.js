@@ -20,7 +20,7 @@ const Form = ({currentId,setCurrentId}) => {
     const dispatch=useDispatch()
     const data = useState(JSON.parse(localStorage.getItem('profile')))
     const posts = useSelector(state=>state.alldata)
-    console.log(data,'dataaa');
+    //console.log(data,'dataaa');
     const history = useNavigate()
     const classes = useStyles();
     const handleSubmit=(e)=>{

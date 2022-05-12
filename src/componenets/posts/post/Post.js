@@ -15,12 +15,11 @@ import { useNavigate } from 'react-router-dom'
 const Post=({post,setCurrentId})=> {
     const classes = useStyles();
     const user = JSON.parse(localStorage.getItem('profile'));
-    //const p = useSelector((state) => state.alldata);
-    //console.log(p,'posts')
+   
     const history = useNavigate();
-    //console.log(user,'user');
+   
     const dispatch = useDispatch()
-   //console.log(post,'posts');
+  
     const Likes = () => {
       if (post?.likes?.length > 0) {
         return post.likes.find((like) => like === (user?.result?.googleId || user?.result?._id))
@@ -49,7 +48,7 @@ const Post=({post,setCurrentId})=> {
              {/* </ButtonBase> */}
              <div className={classes.overlay}>
              <Typography variant="h6">{post.name}</Typography>
-             <Typography variant="body2">{moment(post.createAt).fromNow()}</Typography>
+             <Typography variant="body2">{moment(post.createdAt).fromNow()}</Typography>
              
              </div>
              {(user?.result?.googleId === post?.creator || user?.result?._id === post?.creator) && (

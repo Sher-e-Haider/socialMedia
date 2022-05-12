@@ -13,7 +13,7 @@ const CommentSection = ({ post }) => {
   const [comments, setComments] = useState(post.comments);
   const classes = useStyles();
   const commentsRef = useRef();
-  console.log(comments,'postttyy');
+  //console.log(post,'postttyy');
 
   const handleComment = async() => {
     const newComments = await dispatch(commentPost(`${user?.result?.name}:${comment}`, post._id));
