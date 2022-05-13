@@ -48,6 +48,8 @@ a{
   font-size:18px;
 }
 
+
+
 @media screen and (max-width:420px){
   a{
     font-size: 15px;
@@ -55,4 +57,11 @@ a{
   .para{
     font-size: 13px;
   }
+  .commentsOuterContainer {
+     display:flex;
+     flex-direction: column-reverse;
+     justify-content: center;
+     align-items: center;
+  
+   }
 }

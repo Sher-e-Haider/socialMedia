@@ -46,8 +46,9 @@ export default makeStyles((theme) => ({
     height: '39vh',
   },
   commentsOuterContainer: {
-    display: 'flex',
-    justifyContent: 'space-between',
+   display:'flex',
+  justifyContent:'space-between'
+
   },
   commentsInnerContainer: {
     height: '200px',

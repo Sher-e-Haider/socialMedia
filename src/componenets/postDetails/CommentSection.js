@@ -26,7 +26,8 @@ const CommentSection = ({ post }) => {
 
   return (
     <div>
-       <div className={classes.commentsOuterContainer}>
+       {/* <div className='commentsOuterContainer'{classes.commentsOuterContainer}> */}
+       <div className={`commentsOuterContainer ${classes.commentsOuterContainer}`}>
         {
           comments &&<div className={classes.commentsInnerContainer}>
           <Typography gutterBottom variant="h6">Comments</Typography>
@@ -45,7 +46,7 @@ const CommentSection = ({ post }) => {
         {
           user?.result?.name &&<div style={{ width: '70%' }}>
           <Typography gutterBottom variant="h6">Write a comment</Typography>
-          <TextField fullWidth rows={4} variant="outlined" label="Comment" multiline value={comment} onChange={(e) => setComment(e.target.value)} />
+          <TextField  rows={3} xs={8} variant="outlined" fullWidth label="Comment" multiline value={comment} onChange={(e) => setComment(e.target.value)} />
           <br />
           <Button style={{ marginTop: '10px' }} fullWidth disabled={!comment.length} color="primary" variant="contained" onClick={handleComment}>
             Comment

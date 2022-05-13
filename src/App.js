@@ -1,16 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
 import {BrowserRouter,Route,Routes,Navigate} from 'react-router-dom'
 import Home from './componenets/home/Home';
 import Auths from './auth/Auths';
 import PostDetails from './componenets/postDetails/PostDetails';
 import { Container } from '@material-ui/core';
-import { useSelector } from 'react-redux';
 
 function App() {
-  const user = JSON.parse(localStorage.getItem('profile'));
-  const p = useSelector((state) => state.alldata);
-  //console.log(p,'ppppp');
+  
   return (
    
        <BrowserRouter>

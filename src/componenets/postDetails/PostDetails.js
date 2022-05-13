@@ -17,7 +17,7 @@ const PostDetails = () => {
   const history = useNavigate()
   const classes = useStyles();
   const { id } = useParams();
-  console.log(posts,'sahilll');
+  
   useEffect(() => {
     dispatch(getPost(id));
     
@@ -38,7 +38,7 @@ const PostDetails = () => {
       setRecommendedPosts(re)
     }
   
-},[id])
+},[])
  
   
 
