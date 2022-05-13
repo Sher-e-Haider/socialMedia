@@ -17,7 +17,7 @@ const PostDetails = () => {
   const history = useNavigate()
   const classes = useStyles();
   const { id } = useParams();
-  //console.log(user,'sahilll');
+  console.log(posts,'sahilll');
   useEffect(() => {
     dispatch(getPost(id));
     
@@ -34,11 +34,11 @@ const PostDetails = () => {
 
   useEffect(() => {
     if(posts){
-      const re = posts?.filter((x) => x?._id !== post._id);
-  setRecommendedPosts(re)
+      const re = posts?.filter((x) => x?._id !== post?._id);
+      setRecommendedPosts(re)
     }
   
-},[])
+},[id])
  
   
 
