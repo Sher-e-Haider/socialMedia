@@ -34,7 +34,7 @@ const PostDetails = () => {
 
   useEffect(() => {
     if(posts){
-      const re = posts?.filter(({ _id }) => _id !== post._id);
+      const re = posts?.filter((x) => x?._id !== post._id);
   setRecommendedPosts(re)
     }
   
