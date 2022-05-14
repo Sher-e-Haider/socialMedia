@@ -8,6 +8,8 @@ import CommentSection from './CommentSection';
 import useStyles from './styles';
 import { getPost, getPostsBySearch } from '../../redux/actions/action';
 import { useState } from 'react';
+import {toast,ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const PostDetails = () => {
   const { post, posts } = useSelector((state) => state.alldata);
@@ -41,11 +43,6 @@ const PostDetails = () => {
 },[])
  
   
-
-
-  
-  
-
    
   
   return (
@@ -57,6 +54,7 @@ const PostDetails = () => {
    post &&(
      
        <Paper style={{ padding: '20px', borderRadius: '15px' }} elevation={6}>
+       <ToastContainer position="bottom-center" limit={1} />
       <div className={classes.card}>
         <div className={classes.section}>
           <Typography variant="h3" component="h2">{post.title}</Typography>

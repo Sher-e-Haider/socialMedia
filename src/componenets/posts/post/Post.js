@@ -4,10 +4,11 @@ import {Card , CardActions, CardContent, CardMedia, Button ,Typography, ButtonBa
 import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt'
 import DeleteIcon from '@material-ui/icons/Delete'
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz'
-//import moment from 'moment'
+import moment from 'moment'
 import {useDispatch, useSelector} from 'react-redux'
 import { deletePost, getPost, likePost } from '../../../redux/actions/action'
-import moment from 'moment'
+import {toast,ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { ThumbUpAltOutlined } from '@material-ui/icons'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
@@ -25,7 +26,9 @@ const Post=({post,setCurrentId})=> {
     const dispatch = useDispatch()
     const handleLike =async () => {
       dispatch(likePost(post._id));
-  
+      if(!user){
+        return toast.error('please signIn to like,create and post')
+      }
       if (hasLikedPost) {
         setLikes(post?.likes?.filter((id) => id !== userId));
       } else {
@@ -54,7 +57,7 @@ const Post=({post,setCurrentId})=> {
    
     return (
         <Card className={classes.card}  >
-             
+              <ToastContainer position="bottom-center" limit={1} />
          <div onClick={openPost}>
              <CardMedia className={classes.media} image={post.selectedFile} title={post.title}/>
              </div>
